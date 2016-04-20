@@ -21,6 +21,29 @@ body {
   color: #333;
 }
 
+a {
+	text-decoration:none;
+	display: inline-block;
+	color:tomato;
+}
+
+
+a:after {
+	content: '';
+	display: block;
+	height: 2px;
+	width: 0;
+	background: transparent;
+	transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+}
+
+a:hover:after {
+	width: 100%;
+	background: tomato;
+}
+
 .wrapper {
 	width: 95%;
 	max-width: 960px;
