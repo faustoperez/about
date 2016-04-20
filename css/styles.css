@@ -57,10 +57,10 @@ p:first-of-type {
 p:first-of-type:before {
 	content: '';
 	position: absolute;
-	top: -1em;
+	top: -1.5em;
 	left: 0;
 	width: 50px;
-	height: 3px;
+	height: 2px;
 	background-color: #333;
 }
 
@@ -82,7 +82,7 @@ li:last-of-type {
 
 @media all and (min-width: 768px) {
 	p:first-of-type {
-		margin-top: 6em;
+		margin-top: 5em;
 	}
 
 	li {
