@@ -71,23 +71,21 @@ ul {
 
 li {
 	display: inline-block;
-	margin-right: 10px;
+	margin-right: 5px;
 	font-size: .7em;
 }
 
-li:after {
-	content: '/';
-	display: inline-block;
-	margin-left: 10px;
-	opacity: .5;
+li:last-of-type {
+	margin-right: 0;
 }
 
-li:last-of-type:after {
-	display: none;
-}
 
 @media all and (min-width: 600px) {
-	 p:first-of-type {
-	 	margin-top: 6em;
-	 }
+	p:first-of-type {
+		margin-top: 6em;
+	}
+
+	li {
+		margin-right: 10px;
+	}
 }
