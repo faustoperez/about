@@ -27,7 +27,6 @@ a {
 	color:tomato;
 }
 
-
 a:after {
 	content: '';
 	display: block;
