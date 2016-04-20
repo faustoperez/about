@@ -3,7 +3,7 @@ html {
   line-height: 1.5;
 }
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 768px) {
   html {
     font-size: 1.75em;
   }
@@ -80,7 +80,7 @@ li:last-of-type {
 }
 
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 768px) {
 	p:first-of-type {
 		margin-top: 6em;
 	}
