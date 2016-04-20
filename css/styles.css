@@ -16,8 +16,8 @@ html {
 }
 
 body {
-  font-family: 'Source Serif Pro', Georgia, serif;
-  background: #f6f6f8;
+  font-family: 'Vollkorn', Georgia, serif;
+  background: #fcfcfc;
   color: #382a2a;
 }
 
@@ -72,7 +72,7 @@ ul {
 li {
 	display: inline-block;
 	margin-right: 5px;
-	font-size: .7em;
+	font-size: .75em;
 }
 
 li:last-of-type {
