@@ -17,6 +17,12 @@ html {
 
 body {
   font-family: 'Vollkorn', Georgia, serif;
+  -webkit-font-feature-settings: "liga" 1;
+  -moz-font-feature-settings: "liga" 1;
+  -moz-font-feature-settings: "liga=1";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga" 1;
   background: #fcfcfc;
   color: #382a2a;
   margin-bottom: 2em;
