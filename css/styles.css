@@ -1,6 +1,6 @@
 html {
-  font-size: 1.5em;
-  line-height: 1.5;
+	font-size: 1.5em;
+	line-height: 1.5;
 }
 
 @media all and (min-width: 768px) {
@@ -16,59 +16,63 @@ html {
 }
 
 body {
-  font-family: 'Vollkorn', Georgia, serif;
-  -webkit-font-feature-settings: "liga" 1;
-  -moz-font-feature-settings: "liga" 1;
-  -moz-font-feature-settings: "liga=1";
-  -ms-font-feature-settings: "liga" 1;
-  -o-font-feature-settings: "liga" 1;
-  font-feature-settings: "liga" 1;
-  background: #fcfcfc;
-  color: #382a2a;
-  margin-bottom: 2em;
+	background: #fcfcfc;
+	color: #382a2a;
+	font-family: 'Vollkorn', Georgia, serif;
+
+	-webkit-font-feature-settings: "liga" 1;
+	-moz-font-feature-settings: "liga" 1;
+	-moz-font-feature-settings: "liga=1";
+	-ms-font-feature-settings: "liga" 1;
+	-o-font-feature-settings: "liga" 1;
+	font-feature-settings: "liga" 1;
+
+	margin-bottom: 2em;
 }
 
 a {
-	text-decoration:none;
-	display: inline-block;
 	color:tomato;
+	display: inline-block;
+	text-decoration: none;
 }
 
 a:after {
+	background: transparent;
 	content: '';
 	display: block;
 	height: 2px;
-	width: 0;
-	background: transparent;
+
 	transition: all .3s ease;
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease;
+
+	width: 0;
 }
 
 a:hover:after {
-	width: 100%;
 	background: tomato;
+	width: 100%;
 }
 
 .wrapper {
-	width: 95%;
 	max-width: 960px;
 	margin: 0 auto;
+	width: 95%;
 }
 
 p:first-of-type {
-	position: relative;
 	margin-top: 3em;
+	position: relative;
 }
 
 p:first-of-type:before {
+	background-color: #333;
 	content: '';
+	height: 2px;
+	left: 0;
 	position: absolute;
 	top: -1.5em;
-	left: 0;
 	width: 50px;
-	height: 2px;
-	background-color: #333;
 }
 
 ul {
@@ -78,14 +82,13 @@ ul {
 
 li {
 	display: inline-block;
-	margin-right: 5px;
 	font-size: .75em;
+	margin-right: 5px;
 }
 
 li:last-of-type {
 	margin-right: 0;
 }
-
 
 @media all and (min-width: 768px) {
 	p:first-of-type {
