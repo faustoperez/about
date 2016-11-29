@@ -82,7 +82,7 @@ ul {
 
 li {
 	display: inline-block;
-	font-size: .65em;
+	font-size: .75em;
 	margin-right: 5px;
 }
 
@@ -96,6 +96,6 @@ li:last-of-type {
 	}
 
 	li {
-		margin-right: 10px;
+		font-size: .6em;
 	}
 }
