@@ -16,9 +16,9 @@ html {
 }
 
 body {
-	background: #fcfcfc;
-	color: #382a2a;
-	font-family: 'Vollkorn', Georgia, serif;
+	background-color: white;
+	color: #333;
+	font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Sans Serif", Icons;
 
 	-webkit-font-feature-settings: "liga" 1;
 	-moz-font-feature-settings: "liga" 1;
@@ -31,7 +31,7 @@ body {
 }
 
 a {
-	color:tomato;
+	color:#0030fe;
 	display: inline-block;
 	text-decoration: none;
 }
@@ -51,7 +51,7 @@ a:after {
 }
 
 a:hover:after {
-	background: tomato;
+	background: #0030fe;
 	width: 100%;
 }
 
