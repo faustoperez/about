@@ -1,17 +1,17 @@
 html {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	line-height: 1.5;
 }
 
 @media all and (min-width: 768px) {
   html {
-    font-size: 1.75em;
+    font-size: 1.4em;
   }
 }
 
 @media all and (min-width: 1200px) {
   html {
-    font-size: 2em;
+    font-size: 1.6em;
   }
 }
 
