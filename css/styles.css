@@ -40,7 +40,7 @@ a:after {
 	background: transparent;
 	content: '';
 	display: block;
-	height: 2px;
+	height: 1px;
 
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease;
