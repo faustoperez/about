@@ -18,7 +18,7 @@ html {
 body {
 	background-color: white;
 	color: #333;
-	font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Sans Serif", Icons;
+	font-family: 'Faustina', serif;
 
 	-webkit-font-feature-settings: "liga" 1;
 	-moz-font-feature-settings: "liga" 1;
