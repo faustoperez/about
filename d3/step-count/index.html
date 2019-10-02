@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<nav>
-			<h1>Hello F!</h1>
+			<h1>Hello!</h1>
 			
 			<h2>Worst day</h2>
 			<p>1,000 steps</p>
@@ -30,17 +30,18 @@
 
 		<main>
 			<h1>Today</h1>
-			<svg width="900" height="600">
+			<svg width="900" height="200" class="today">
 			</svg>
 
 			<h1>Last 28 days</h1>
-			<svg width="900" height="600">
-				<circle cx="60" cy="80" r="50"></circle>
-				<circle cx="180" cy="80" r="40"></circle>
-				<circle cx="300" cy="80" r="60"></circle>
+			<svg width="900" height="600" class="month">
 			</svg>
 		</main>
+
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="data.js"></script>
+		<script src="today.js"></script>
+		<script src="month.js"></script>
 		
-		<script src="vanilla.js"></script>
 	</body>
 </html>
