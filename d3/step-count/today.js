@@ -5,21 +5,45 @@ const barScale = d3.scaleLinear()
     .range([1, 112])
 
 
-todaySvg
-    .selectAll("rect")
+const todayGroups = todaySvg
+    .selectAll("g")
     .data(todayData)
     .enter()
-    .append("rect")
-    .attr("x", (d, i) => { return i * 36 })
-    .attr("y", (d, i) => { return 112 - barScale(d) })
-    .attr("width", 24)
-    .attr("height", (d, i) => { return barScale(d) })
+    .append("g")
+    .attr("transform", (d, i) => { return "translate(" + i * 36 + ", 0)" })
 
-todaySvg
-    .selectAll("text")
-    .data(todayData)
-    .enter()
+
+todayGroups
+    .append("rect")
+    .attr("class", "transparent")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", 24)
+    .attr("height", 140)
+
+todayGroups
+    .append("rect")
+    .attr("x", 0)
+    .attr("y", 124)
+    .attr("width", 24)
+    .attr("height", 0)
+    .transition()
+        .attr("height", (d, i) => { return barScale(d) })
+        .attr("y", (d, i) => { return 124 - barScale(d) })
+        .delay((d, i) => { return i * 20 })
+
+
+todayGroups
     .append("text")
-    .attr("x", (d,i) => { return i * 36 + 12 })
-    .attr("y", 130)
+    .attr("class", "hours")
+    .attr("x", 12)
+    .attr("y", 140)
     .text((d, i) => { return i })
+
+todayGroups
+    .append("text")
+    .attr("class", "steps")
+    .attr("x", 12)
+    .attr("y", (d, i ) => { return 118 - barScale(d) })
+    .text((d, i) => { return d })
+

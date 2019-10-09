@@ -54,10 +54,11 @@ p {
 
 rect {
 	fill: var(--primary-orange);
+	transition: fill 0.5s ease;
 }
 
-circle {
-	/* fill: var(--primary-blue); */
+circle.actual {
+	fill: var(--primary-blue);
 }
 
 text {
@@ -66,3 +67,43 @@ text {
 	font-size: 14px;
 }
 
+text.steps {
+	opacity: 0;
+	transition: opacity 0.25s ease;
+}
+
+g:hover {
+	cursor: pointer;
+}
+
+g:hover text.steps {
+	 opacity: 1;
+}
+
+rect.transparent {
+	opacity: 0;
+}
+
+circle.ring {
+	fill: none;
+	stroke: var(--secondary-blue);
+	stroke-width: 2px;
+	opacity: 0.25;
+}
+
+text.day {
+	opacity: 1;
+	transition: opacity 0.25;
+}
+
+g:hover text.day {
+	opacity: 0;
+}
+
+svg.month text.day {
+	fill: var(--secondary-blue);
+}
+
+svg.month text.steps {
+	fill: var(--primary-blue);
+}
