@@ -1,0 +1,49 @@
+
+@font-face {
+    font-family: Mohave;
+    src: url(../fonts/Mohave-Light.woff2), url(../fonts/Mohave-Light.woff);
+}
+
+@font-face {
+    font-family: Mohave;
+    font-weight: 700;
+    src: url(../fonts/Mohave-Bold.woff2), url(../fonts/Mohave-Bold.woff);
+}
+
+:root {
+    --background: #272727;
+    --text-color: #FFFFFF;
+}
+
+body {
+    font-family: Mohave;
+    font-size: 16px;
+    line-height: 1.25;
+
+    background-color: var(--background);
+    color: var(--text-color);
+    margin: 160px auto 80px auto;
+    width: 800px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+}
+
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    max-width: 400px;
+    background-image: url(../img/temp.svg);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding-left: 64px;
+}
