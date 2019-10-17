@@ -47,3 +47,45 @@ h1 {
     background-position: 0 50%;
     padding-left: 64px;
 }
+
+text {
+    fill: var(--text-color);
+    text-anchor: end;
+}
+
+text.city {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+text.temp {
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 0;
+}
+
+circle {
+    fill: var(--text-color);
+    opacity: 0;
+}
+
+path {
+    stroke: var(--text-color);
+    stroke-width: 4px;
+    fill: none;
+    opacity: 1;
+}
+
+g.data-point:hover path {
+    opacity: 0;
+}
+
+g.data-point:hover text.temp {
+    opacity: 1;
+}
+
+g.data-point:hover circle {
+    opacity: 1;
+}
