@@ -1,2 +1,2 @@
 # about
-Just a little info about me.
+Some info about me and a few personal projects.
