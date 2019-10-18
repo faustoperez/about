@@ -1,0 +1,23 @@
+:root {
+    --background: #fff9f9;
+    --primary-color: red;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+    background-color: var(--background);
+    color: var(--primary-color);
+    margin: 64px auto;
+    width: 960px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 48px 0;
+}
+
+span {
+    margin: 0 8px;
