@@ -11,7 +11,7 @@ body {
     background-color: var(--background);
     color: var(--primary-color);
     margin: 64px auto;
-    width: 960px;
+    max-width: 960px;
     text-align: center;
 }
 
@@ -43,4 +43,30 @@ text.x-axis, text.y-axis {
     font-size: 24px;
     text-anchor: middle;
     dominant-baseline: middle;
+}
+
+g.city rect {
+    fill: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+g.city text {
+    fill: var(--background);
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+g.city:hover rect, g.city:hover text {
+    opacity: 1;
+}
+
+
+@media (max-width: 1000px) {
+    body {
+        margin: 20px;
+    }
 }

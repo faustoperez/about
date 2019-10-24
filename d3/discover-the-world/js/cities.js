@@ -10,8 +10,7 @@
 const svg = d3.select("svg")
 
 svg
-    .attr("width", 960)
-    .attr ("height", 720)
+    .attr("viewBox", "0 0 960 720")
 
 const axisXGroup = svg
     .append("g")
@@ -89,7 +88,7 @@ const placeCities = function() {
 
     const cities = svg
         .selectAll("g.city")
-        .data(data)
+        .data(data, (d, i) => { return d.city })
         .enter()
         .append("g")
         .attr("class", "city")
@@ -107,6 +106,19 @@ const placeCities = function() {
         .transition()
         .attr("r", (d, i) => { return scaleR(d.population) })
 
+    cities
+        .append("rect")
+        .attr("x", -60)
+        .attr("y", (d, i) => { return -1 * (scaleR(d.population)) -35 })
+        .attr("width", 120)
+        .attr("height", 30)
+    
+    cities
+        .append("text")
+        .attr("x", 0)
+        .attr("y", (d, i) => { return -1 * (scaleR(d.population)) -18 })
+        .text((d, i) => { return d.city })
+
     svg
         .selectAll("g.city")
         .transition()
@@ -115,6 +127,12 @@ const placeCities = function() {
             const x = scaleX(d[valueX])
             const y = scaleY(d[valueY])
             return `translate(${x}, ${y})`
+        })
+
+    svg
+        .selectAll("g.city")
+        .on("mouseover", function() {
+            d3.select(this).raise()
         })
 
 }
