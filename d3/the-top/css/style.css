@@ -16,7 +16,7 @@ body {
     background-color: var(--background);
     color: var(--text-color);
     margin: 40px auto;
-    max-width: 960px;
+    width: 960px;
 }
 
 header {
@@ -77,15 +77,40 @@ g.movie:hover {
 path.imdb {
     fill: none;
     stroke: var(--imdb);
-    stroke-width: 5px;
+    stroke-width: 3px;
 }
 
 path.metascore {
     fill: none;
     stroke: var(--metascore);
-    stroke-width: 5px;
+    stroke-width: 3px;
 }
 
 path.area {
     fill: var(--highlight);
+}
+
+text.imdb {
+    fill: var(--imdb);
+    font-size: 12px;
+
+}
+
+text.metascore {
+    fill: var(--metascore);
+    font-size: 12px;
+
+}
+
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 14px;
+        width: auto;
+        margin: 24px;
+    }
+
+    text.imdb, text.metascore {
+        display: none;
+    }
 }

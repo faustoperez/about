@@ -1,8 +1,13 @@
 const svg = d3.select("svg")
 
+data = data.map((d, i) => {
+        d.difference = d.imdb - d.metascore
+        return d
+})
+
 svg
     .attr("height", 40 * data.length)
-    .attr("width", 960)
+    .attr("width", "100%")
 
 const scoreScale = d3.scaleLinear()
     .domain([0, 100])
@@ -86,6 +91,46 @@ groups
     .attr("r", 8)
     .attr("class", "metascore")
 
+groups
+    .append("text")
+    .attr("x", (d, i) => { 
+        if (d.difference > 0) {
+            return scoreScale(d.imdb) + 15
+        } else {
+            return scoreScale(d.imdb) - 15
+        }
+    })
+    .attr("y", 22)
+    .attr("class", "imdb")
+    .text((d, i) => { return d.imdb })
+    .style("text-anchor", (d, i) => {
+        if (d.difference > 0) {
+            return "start"
+        } else {
+            return "end"
+        }
+    })
+
+    groups
+    .append("text")
+    .attr("x", (d, i) => { 
+        if (d.difference > 0) {
+            return scoreScale(d.metascore) - 15
+        } else {
+            return scoreScale(d.metascore) + 15
+        }
+    })
+    .attr("y", 22)
+    .attr("class", "metascore")
+    .text((d, i) => { return d.metascore })
+    .style("text-anchor", (d, i) => {
+        if (d.difference > 0) {
+            return "end"
+        } else {
+            return "start"
+        }
+    })
+
 
 const selectTag = document.querySelector("select")
 
@@ -97,7 +142,9 @@ selectTag.addEventListener("change", function() {
             return d3.descending(a.metascore, b.metascore)
          } else if (this.value == "title") {
             return d3.ascending(a.title, b.title)
-         } else {
+         } else if (this.value == "difference"){
+          return d3.descending(a.difference, b.difference)   
+        } else {
              return d3.ascending(a.year, b.year)
          }
     })
@@ -126,3 +173,53 @@ selectTag.addEventListener("change", function() {
         .duration(1000)
         .attr("d", area)
 })
+
+const resize = function() {
+    const svgTag = document.querySelector("svg")
+    const svgWidth = svgTag.clientWidth
+
+    scoreScale
+        .range([420 / 960 * svgWidth, 900 / 960 * svgWidth])
+
+    groups
+        .selectAll("circle.metascore")
+        .attr("cx", (d, i) => { return scoreScale(d.metascore) })
+    
+    
+    groups
+        .selectAll("circle.imdb")
+        .attr("cx", (d, i) => { return scoreScale(d.imdb) })
+    
+    groups
+        .selectAll("text.title")
+        .attr("x", (svgWidth >= 960) ? 90 : 70)
+    
+    metascoreLine
+        .x((d, i) => { return scoreScale(d.metascore)})
+    
+    metascorePath
+        .attr("d", metascoreLine)
+
+    imdbLine
+        .x((d, i) => { return scoreScale(d.imdb)})
+    
+    imdbPath
+        .attr("d", imdbLine)
+    
+    area
+        .x0((d, i) => { return scoreScale(d.imdb) })
+        .x1((d, i) => { return scoreScale(d.metascore) })
+
+    areaPath
+        .attr("d", area)
+
+    
+    }
+
+    
+
+resize()
+
+window.addEventListener("resize", function() {
+    resize()
+}) 
