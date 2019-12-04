@@ -12,8 +12,8 @@ const projection = d3.geoNaturalEarth1()
 const mapGenerator = d3.geoPath()
     .projection(projection)
 
-d3.json("/js/data.json").then(function (data) {
-    d3.json("/js/world-110m2.json").then(function (mapData) {
+d3.json("js/data.json").then(function (data) {
+    d3.json("js/world-110m2.json").then(function (mapData) {
            
         worldGroup
             .selectAll("path")
