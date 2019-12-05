@@ -22,8 +22,8 @@ const scrollScale = d3.scaleLinear()
     .range([0, 10, 100, 300, 2000])
     .clamp(true)
 
-d3.json("data.json").then(function (data) {
-    d3.json("world-110m2.json").then(function (mapData) {
+d3.json("https://faustoperez.com/d3/population-densities/js/data.json").then(function (data) {
+    d3.json("https://faustoperez.com/d3/population-densities/js/world-110m2.json").then(function (mapData) {
            
         worldGroup
             .selectAll("path")
