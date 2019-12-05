@@ -1,3 +1,4 @@
+
 const svg = d3.select("svg")
 
 svg.attr("viewbox", "0 0 1000 600")
@@ -12,8 +13,17 @@ const projection = d3.geoNaturalEarth1()
 const mapGenerator = d3.geoPath()
     .projection(projection)
 
-d3.json("js/data.json").then(function (data) {
-    d3.json("js/world-110m2.json").then(function (mapData) {
+const colorScale = d3.scaleSequentialPow(d3.interpolatePlasma)
+    .domain([2000, 0])
+    .exponent(0.3)
+
+const scrollScale = d3.scaleLinear()
+    .domain([0, 2000, 4000, 7500, 15000])
+    .range([0, 10, 100, 300, 2000])
+    .clamp(true)
+
+d3.json("data.json").then(function (data) {
+    d3.json("world-110m2.json").then(function (mapData) {
            
         worldGroup
             .selectAll("path")
@@ -21,8 +31,37 @@ d3.json("js/data.json").then(function (data) {
             .enter()
             .append("path")
             .attr("d", mapGenerator)
-            .style("fill", "red")
+            .style("fill", (d, i) => {
+                const country = data.find((country) => { return country.name == d.properties.name })
+                
+                if (country) {
+                    return colorScale(country.density)
+                } else {
+                    return "#111111"
+                }
+            })
 
+        window.addEventListener("scroll", function () {
+            const pixels = window.pageYOffset
+
+            const threshold = scrollScale(pixels)
+            const format = d3.format(".1f")
+
+            d3.select("span.counter").text(format(threshold))
+
+
+            worldGroup
+                .selectAll("path")
+                style("fill", (d, i) => {
+                    const country = data.find((country) => { return country.name == d.properties })
+
+                    if (country && country.density > threshold) {
+                        return colorScale(country.density)
+                    } else {
+                        return "#111111"
+                    }
+                })
+        })
 
 
     }) 
