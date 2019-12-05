@@ -22,8 +22,8 @@ const scrollScale = d3.scaleLinear()
     .range([0, 10, 100, 300, 2000])
     .clamp(true)
 
-d3.json("https://faustoperez.com/d3/population-densities/js/data.json").then(function (data) {
-    d3.json("https://faustoperez.com/d3/population-densities/js/world-110m2.json").then(function (mapData) {
+d3.json("/js/data.json").then(function (data) {
+    d3.json("/js/world-110m2.json").then(function (mapData) {
            
         worldGroup
             .selectAll("path")
@@ -41,27 +41,25 @@ d3.json("https://faustoperez.com/d3/population-densities/js/data.json").then(fun
                 }
             })
 
-        window.addEventListener("scroll", function () {
+        window.addEventListener("scroll", () => {
+      
             const pixels = window.pageYOffset
-
             const threshold = scrollScale(pixels)
             const format = d3.format(".1f")
-
+      
             d3.select("span.counter").text(format(threshold))
-
-
+            
             worldGroup
                 .selectAll("path")
-                style("fill", (d, i) => {
-                    const country = data.find((country) => { return country.name == d.properties })
-
-                    if (country && country.density > threshold) {
-                        return colorScale(country.density)
-                    } else {
-                        return "#111111"
-                    }
-                })
-        })
+                .style("fill", (d) => {
+                    const country = data.find(country => country.name == d.properties.name)
+                if (country && country.density > threshold) {
+                   return colorScale(country.density)
+                } else {
+                  return "#191919"
+                }
+              })
+          })
 
 
     }) 
