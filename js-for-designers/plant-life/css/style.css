@@ -1,3 +1,9 @@
+@keyframes fade {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+
 @font-face {
 	font-family: "IBM Plex Mono";
 	src: url(../fonts/ibm-plex-mono.woff2), url(../fonts/ibm-plex-mono.woff);
@@ -101,4 +107,25 @@ a.button {
 	text-decoration: none;
 	padding: 10px 15px;
 	border-radius: 4px;
+}
+
+div.slides {
+	height: 475px;
+	position: relative;
+}
+
+div.slides img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: transform 0.5s, box-shadow 0.5s;
+	pointer-events: none;
+}
+
+div.slides img:first-child {
+	z-index: 1;
+}
+
+div.slides:hover img {
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1)
 }
