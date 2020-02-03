@@ -45,12 +45,23 @@ h1 {
 }
 
 div.option {
-	margin: 10px 0 0 0;
+	margin: 20px 0 0 0;
+}
+
+div.option-checkbox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 label {
 	display: block;
 	margin-bottom: 5px;
+}
+
+label span {
+	float: right;
+	font-style: italic;
 }
 
 input[type="text"] {
@@ -62,6 +73,16 @@ input[type="text"] {
 	padding: 5px 7px;
 }
 
-section.output {
+input[type="range"] {
+	width: 100%;
+}
+
+textarea.output {
 	font-size: 64px;
+	width: 100%;
+	background: none;
+	color: #ffffff;
+	border: none;
+	outline: none;
+	min-height: 100vh;
 }
