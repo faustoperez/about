@@ -20,8 +20,24 @@
 			</div>
 
 			<div class="option">
+				<label>Typeface</label>
+				<select name="typeface">
+					<option value="Fira Sans">Fira Sans</option>
+					<option value="Prompt">Prompt</option>
+					<option value="Taviraj">Taviraj</option>
+					<option value="Trirong">Trirong</option>
+
+				</select>
+			</div>
+
+			<div class="option">
 				<label>Type size<span class="typesize-output">64px</span></label>
 				<input type="range" name="typesize" min=12 max=200 value=64>
+			</div>
+
+			<div class="option">
+				<label>Font weight<span class="fontweight-output">400</span></label>
+				<input type="range" name="fontweight" min=100 max=900 value=400 step=100>
 			</div>
 
 			<div class="option">
@@ -32,6 +48,16 @@
 			<div class="option option-checkbox">
 				<label>Italic</label>
 				<input type="checkbox" name="italic">
+			</div>
+
+			<div class="option">
+				<label>Colors</label>
+				<div class="colors">
+					<div style="background-color: #2a2a2a; color: #ffffff;" class="selected">a</div>
+					<div style="background-color: #ffffff; color: #2a2a2a;">a</div>
+					<div style="background-color: #63ff03; color: #2a2a2a;">a</div>
+					<div style="background-color: #ee0073; color: #ffffff;">a</div>
+				</div>
 			</div>
 
 		</section>
