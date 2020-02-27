@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     
 
     const irisLeft = document.querySelector("div.iris-left")
