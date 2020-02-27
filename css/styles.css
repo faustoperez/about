@@ -135,8 +135,7 @@ div.stamps {
 
 div.stamps img {
 	position: absolute;
-	mix-blend-mode: multiply;
-	opacity: .75;
+	/* mix-blend-mode: multiply; */
 	animation: spin 30s linear infinite;
 }
 
