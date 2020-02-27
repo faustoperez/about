@@ -23,11 +23,6 @@
          url("fonts/Inter-SemiBold.woff?v=3.11") format("woff");
 }
 
-@keyframes spin {
-	0%   { transform: translate(-50%, -50%) rotate(0deg); }
-	100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
 
 html {
 	font-size: 1.2em;
@@ -59,7 +54,7 @@ body {
 	-o-font-feature-settings: "liga" 1;
 	font-feature-settings: "liga" 1;
 
-	margin-bottom: 2em;
+	margin: 2em 0;
 
 	overflow-x: hidden;
 
@@ -103,12 +98,6 @@ a:hover:after {
 	width: 95%;
 }
 
-
-p:first-of-type {
-	margin-top: 3em;
-	position: relative;
-}
-
 ul {
 	margin: 2em 0 0;
 	padding: 0;
@@ -124,25 +113,33 @@ li:last-of-type {
 	margin-right: 0;
 }
 
-div.stamps {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 50%;
-	z-index: -1;
-	background-color: var(--bg);
+
+div.face {
+	position: relative;
 }
 
-div.stamps img {
+div.iris {
 	position: absolute;
-	/* mix-blend-mode: multiply; */
-	animation: spin 30s linear infinite;
+	top: 12px;
+	left: 12px;
+}
+
+div.iris-right {
+	left: 53px;
+}
+
+div.iris div {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	background-color: var(--text-color);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
 }
 
 @media all and (min-width: 768px) {
-	p:first-of-type {
-		margin-top: 5em;
-	}
 
 	li {
 		margin-right: 10px;
