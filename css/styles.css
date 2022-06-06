@@ -107,7 +107,7 @@ header, .detail, .contact {
 
 .contact {
     padding: 60px 20px;
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
 .contact ul {
@@ -149,11 +149,5 @@ header, .detail, .contact {
     header {
         padding: 120px 0;
     }
-
-    footer {
-        padding: 100px 0;
-    }
-
-
 
 }
