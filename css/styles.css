@@ -25,6 +25,7 @@ body {
     background: var(--background);
 }
 
+
 ul {
     list-style: none;
     margin: 0;
@@ -45,6 +46,10 @@ img {
     max-width: 100%;
     height: auto;
     padding-bottom: 40px;
+}
+
+img.logo {
+    padding-bottom: 20px;
 }
 
 h1, h2, h3 {
