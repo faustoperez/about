@@ -78,6 +78,10 @@ h1, h2, h3 {
     max-width: 48rem;
 }
 
+h3 {
+  margin-top: 2em;
+}
+
 header, section {
     border-bottom: 1px solid var(--light-background);
 }
