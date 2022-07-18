@@ -239,7 +239,8 @@ header, .detail, .contact {
 @media screen and (min-width: 600px) {
 
     .detail {
-        padding: 100px 20px 40px 20px;
+        padding-top: 100px;
+        padding-bottom: 40px;
     }
 
     .detail img {
@@ -261,7 +262,7 @@ header, .detail, .contact {
         font-size: 1.1rem;
     }
 
-    header {
+    header, .detail {
         padding: 120px 0;
     }
 
