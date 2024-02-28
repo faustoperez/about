@@ -1,2 +1,2 @@
 # about
-Some info about me and a few personal projects.
+Source code for faustoperez.com
